@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Step 5: Query the layer</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script>
+        var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
+        window.dojoConfig = {
+            has: {
+            "esri-featurelayer-webgl": 1
+          },
+            packages: [{
+                name: "app",
+                location: locationPath + "/app"
+            }]
+        }
+    </script>
+
+    <script src="https://js.arcgis.com/4.8"></script>
+</head>
+
+<body>
+    <div id="viewDiv"></div>
+    <div id="container">
+        <span class="custom-dropdown custom-dropdown--white">
+            <select class="custom-dropdown__select custom-dropdown__select--white" id="selectState">
+                <option value="">Select State</option>
+            </select>
+        </span>
+    </div>
+    <script>
+        require(["app/main"]);
+    </script>
+</body>
+
+</html>

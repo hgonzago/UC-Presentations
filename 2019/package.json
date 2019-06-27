@@ -1,0 +1,24 @@
+{
+  "name": "uc-2019-editing-with-the-js-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prettify": "prettier --write \"{demos}/**/*\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcfranco/uc-2019-editing-with-the-js-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jcfranco/uc-2019-editing-with-the-js-api/issues"
+  },
+  "homepage": "https://github.com/jcfranco/uc-2019-editing-with-the-js-api#readme",
+  "dependencies": {
+    "esri-reveal.js-templates": "git+https://github.com/esri/reveal.js.git"
+  },
+  "devDependencies": {
+    "@types/arcgis-js-api": "4.11.0",
+    "prettier": "1.18.2",
+    "typescript": "3.5.2"
+  }
+}

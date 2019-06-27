@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "baseUrl": ".",
+    "jsx": "react",
+    "jsxFactory": "tsx",
+    "esModuleInterop": true,
+    "module": "amd",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "jsxFactory": "tsx",
+    "target": "es5",
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "lib": [
+      "dom",
+      "es5",
+      "es2015.iterable",
+      "es2015.promise",
+      "es2015.symbol",
+      "es2015.symbol.wellknown",
+      "scripthost"
+    ],
+    "module": "amd",
+    "moduleResolution": "node",
+    "noEmitHelpers": true,
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitUseStrict": true,
+    "noUnusedLocals": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5"
+  },
+  "include": ["demos/"]
+}

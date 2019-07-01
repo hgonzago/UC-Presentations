@@ -6,8 +6,8 @@
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Attachments - popup</title>
 
-  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
-  <script src="https://js.arcgis.com/4.10/"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.12/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.12/"></script>
 
 </head>
 <style>
@@ -19,6 +19,7 @@
     height: 100%;
     width: 100%;
   }
+
 </style>
 <script>
   require([
@@ -62,7 +63,7 @@
       text.text = "{Details}";
 
       const template = {
-title: "{Name}",
+        title: "{Name}",
         content: [text, attachments],
         lastEditInfoEnabled: false
       }
@@ -74,6 +75,7 @@ title: "{Name}",
       map.add(featureLayer);
 
     });
+
 </script>
 
 <body>

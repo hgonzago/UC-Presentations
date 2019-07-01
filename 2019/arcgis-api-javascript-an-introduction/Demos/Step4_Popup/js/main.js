@@ -1,11 +1,10 @@
-var view;
 require([
   "esri/Map",
   "esri/layers/FeatureLayer",
   "esri/views/MapView",
   "esri/PopupTemplate"
 ], function (Map, FeatureLayer, MapView, PopupTemplate) {
-  var defaultSym = {
+  const defaultSym = {
     type: "simple-fill", // autocasts as new SimpleFillSymbol
     outline: {
       // autocasts as new SimpleLineSymbol
@@ -20,7 +19,7 @@ require([
    *
    ******************************************************************/
 
-  var renderer = {
+  const renderer = {
     type: "simple", // autocasts as new SimpleRenderer
     symbol: defaultSym,
     label: "Private school enrollment ratio",
@@ -58,7 +57,7 @@ require([
    *  Create renderer for centroids
    ************************************/
 
-  var centroidRenderer = {
+  const centroidRenderer = {
     type: "simple", // autocasts as new SimpleRenderer
     symbol: {
       type: "picture-marker", // autocasts as new SimpleMarkerSymbol
@@ -74,7 +73,7 @@ require([
    *
    ******************************************************************/
 
-  var privateSchoolsPoint = new FeatureLayer({
+  const privateSchoolsPoint = new FeatureLayer({
     // Private Schools centroids
     url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Centroids/FeatureServer/0",
     renderer: centroidRenderer
@@ -87,7 +86,7 @@ require([
    ******************************************************************/
 
   // Step 1: Create the template
-  var popupTemplate = new PopupTemplate({
+  const popupTemplate = new PopupTemplate({
     title: "Private School enrollment",
     content: [{
         // Specify the type of popup element - fields
@@ -160,7 +159,7 @@ require([
     ]
   });
 
-  var privateSchoolsPoly = new FeatureLayer({
+  const privateSchoolsPoly = new FeatureLayer({
     url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/PrivateSchoolEnrollmentNoRendering/FeatureServer/0",
     outFields: ["*"],
     opacity: 0.8,
@@ -169,7 +168,7 @@ require([
   });
 
   // Set map's basemap
-  var map = new Map({
+  const map = new Map({
     basemap: "gray-vector",
     layers: [privateSchoolsPoly, privateSchoolsPoint]
   });

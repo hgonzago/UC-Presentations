@@ -1,4 +1,3 @@
-var view;
 require([
   "esri/Map",
   "esri/layers/FeatureLayer",
@@ -10,22 +9,22 @@ require([
    *
    ******************************************************************/
 
-  var privateSchoolsPoint = new FeatureLayer({
+  const privateSchoolsPoint = new FeatureLayer({
     // Private Schools centroids
     url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Centroids/FeatureServer/0"
     //url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/PrivateSchools/FeatureServer/0"
   });
 
-  var privateSchoolsPoly = new FeatureLayer({
+  const privateSchoolsPoly = new FeatureLayer({
     url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/PrivateSchoolEnrollmentNoRendering/FeatureServer/0"
   });
 
   // Set map's basemap
-  var map = new Map({
+  const map = new Map({
     basemap: "gray-vector"
   });
 
-  view = new MapView({
+  const view = new MapView({
     container: "viewDiv",
     map: map,
     zoom: 3,

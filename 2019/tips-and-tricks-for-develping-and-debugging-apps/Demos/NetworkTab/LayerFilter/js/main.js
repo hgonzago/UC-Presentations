@@ -8,7 +8,7 @@ require([
   "dojo/on",
   "dojo/dom",
   "dojo/domReady!"
-], function(Map, FeatureLayer, MapView, PopupTemplate, domConstruct, on, dom) {
+], function (Map, FeatureLayer, MapView, PopupTemplate, domConstruct, on, dom) {
   var defaultSym = {
     type: "simple-fill", // autocasts as new SimpleFillSymbol
     outline: {
@@ -28,37 +28,34 @@ require([
     type: "simple", // autocasts as new SimpleRenderer
     symbol: defaultSym,
     label: "Private school enrollment ratio",
-    visualVariables: [
-      {
-        type: "color",
-        field: "PrivateEnr",
-        stops: [
-          {
-            value: 0.044,
-            color: "#edf8fb",
-            label: "< 0.044"
-          },
-          {
-            value: 0.059,
-            color: "#b3cde3"
-          },
-          {
-            value: 0.0748,
-            color: "#8c96c6",
-            label: "0.0748"
-          },
-          {
-            value: 0.0899,
-            color: "#8856a7"
-          },
-          {
-            value: 0.105,
-            color: "#994c99",
-            label: "> 0.105"
-          }
-        ]
-      }
-    ]
+    visualVariables: [{
+      type: "color",
+      field: "PrivateEnr",
+      stops: [{
+          value: 0.044,
+          color: "#edf8fb",
+          label: "< 0.044"
+        },
+        {
+          value: 0.059,
+          color: "#b3cde3"
+        },
+        {
+          value: 0.0748,
+          color: "#8c96c6",
+          label: "0.0748"
+        },
+        {
+          value: 0.0899,
+          color: "#8856a7"
+        },
+        {
+          value: 0.105,
+          color: "#994c99",
+          label: "> 0.105"
+        }
+      ]
+    }]
   };
 
   /***********************************
@@ -83,8 +80,7 @@ require([
 
   var privateSchoolsPoint = new FeatureLayer({
     // Private Schools centroids
-    url:
-      "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Centroids/FeatureServer/0",
+    url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Centroids/FeatureServer/0",
     renderer: centroidRenderer
   });
 
@@ -97,12 +93,10 @@ require([
   // Step 1: Create the template
   var popupTemplate = new PopupTemplate({
     title: "Private School enrollment",
-    content: [
-      {
+    content: [{
         // Specify the type of popup element - fields
         type: "fields",
-        fieldInfos: [
-          {
+        fieldInfos: [{
             fieldName: "state_name",
             visible: true,
             label: "State name: "
@@ -134,8 +128,7 @@ require([
           {
             fieldName: "PrivateEnr",
             visible: true,
-            label:
-              "Total number of private school students enrolled in ratio to total student school enrollment: ",
+            label: "Total number of private school students enrolled in ratio to total student school enrollment: ",
             format: {
               places: 2,
               digitSeparator: true
@@ -145,8 +138,7 @@ require([
       },
       {
         type: "media",
-        mediaInfos: [
-          {
+        mediaInfos: [{
             title: "Ratio private and public school enrollment",
             type: "pie-chart",
             caption: "Private school enrollment in comparison to public school",
@@ -159,8 +151,7 @@ require([
           {
             title: "Total number of private schools",
             type: "bar-chart",
-            caption:
-              "Total number of Private Schools in comparison to public. (Does not pertain to student enrollment.)",
+            caption: "Total number of Private Schools in comparison to public. (Does not pertain to student enrollment.)",
             value: {
               theme: "Julie",
               fields: ["PrivateEnr", "PublicEnro"],
@@ -173,8 +164,7 @@ require([
   });
 
   var privateSchoolsPoly = new FeatureLayer({
-    url:
-      "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/PrivateSchoolEnrollmentNoRendering/FeatureServer/0",
+    url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/PrivateSchoolEnrollmentNoRendering/FeatureServer/0",
     outFields: ["*"],
     opacity: 0.8,
     renderer: renderer,
@@ -205,16 +195,15 @@ require([
   // Create an object to hold key/value pairs for feature navigation
   var featuresMap = {};
 
-  view.when(function() {
-    privateSchoolsPoly.watch("loaded", function() {
+  view.when(function () {
+    privateSchoolsPoly.watch("loaded", function () {
       // If the layer is loaded and ready, query all the features
-      privateSchoolsPoly.queryFeatures().then(function(results) {
-        results.features.forEach(function(feature) {
+      privateSchoolsPoly.queryFeatures().then(function (results) {
+        results.features.forEach(function (feature) {
           var featureId = feature.attributes.OBJECTID; // This should read 'FID'
           var uniqueVal = feature.attributes.state_name;
           domConstruct.create(
-            "option",
-            {
+            "option", {
               value: featureId,
               innerHTML: uniqueVal
             },
@@ -227,7 +216,7 @@ require([
       // Listen for the change event on the dropdown
       // and set the layer's definition expression to the chosen value
       var select = dom.byId("selectState");
-      on(select, "change", function(e) {
+      on(select, "change", function (e) {
         var featureId = select.value;
         var expr = select.value === "" ? "" : "FID = '" + featureId + "'";
         privateSchoolsPoly.definitionExpression = expr;

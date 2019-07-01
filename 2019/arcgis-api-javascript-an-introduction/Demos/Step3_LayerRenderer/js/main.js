@@ -1,10 +1,9 @@
-var view;
 require([
   "esri/Map",
   "esri/layers/FeatureLayer",
   "esri/views/MapView"
 ], function (Map, FeatureLayer, MapView) {
-  var defaultSym = {
+  const defaultSym = {
     type: "simple-fill", // autocasts as new SimpleFillSymbol()
     outline: {
       // autocasts as new SimpleLineSymbol()
@@ -21,7 +20,7 @@ require([
 
   // Step 1: Create individual symbols to represent each unique value
 
-  var renderer = {
+  const renderer = {
     type: "simple", // autocasts as new SimpleRenderer()
     symbol: defaultSym,
     label: "Private school enrollment ratio",
@@ -59,7 +58,7 @@ require([
    *  Create renderer for centroids
    ************************************/
 
-  var centroidRenderer = {
+  const centroidRenderer = {
     type: "simple", // autocasts as new SimpleRenderer()
     symbol: {
       type: "picture-marker", // autocasts as new SimpleMarkerSymbol()
@@ -75,13 +74,13 @@ require([
    *
    ******************************************************************/
 
-  var privateSchoolsPoint = new FeatureLayer({
+  const privateSchoolsPoint = new FeatureLayer({
     // Private Schools centroids
     url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Centroids/FeatureServer/0",
     renderer: centroidRenderer
   });
 
-  var privateSchoolsPoly = new FeatureLayer({
+  const privateSchoolsPoly = new FeatureLayer({
     // Private schools per state
     // layer with rendering
     // url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/OverlaySchools/FeatureServer/0"
@@ -93,11 +92,11 @@ require([
   });
 
   // Set map's basemap
-  var map = new Map({
+  const map = new Map({
     basemap: "gray-vector"
   });
 
-  view = new MapView({
+  const view = new MapView({
     container: "viewDiv",
     map: map,
     zoom: 3,

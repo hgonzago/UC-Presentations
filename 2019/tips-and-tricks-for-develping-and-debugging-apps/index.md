@@ -77,6 +77,7 @@ Kelly Hutchins and Heather Gonzago
 - Generate for VSCode, Sublime, Atom
 - [Snippet generator](https://pawelgrzybek.com/snippet-generator/)
 - Extensions for IDE to simplify
+- [JSAPI Snippet extension](https://marketplace.visualstudio.com/items?itemName=Esri.arcgis-jsapi-snippets)
 
 
 ----
@@ -97,13 +98,6 @@ Kelly Hutchins and Heather Gonzago
 
 ----
 
-### **Demo: Working with multiple files **
-
-- CSS & JS in html
-- Separate files
-- [Web Map](https://developers.arcgis.com/javascript/latest/sample-code/webmap-basic/index.html)
-
-----
 
 ### **Additional resources**
 
@@ -136,9 +130,23 @@ Kelly Hutchins and Heather Gonzago
 ### **Console:  Messages**
 </br>
 <a href="https://developers.arcgis.com/javascript/latest/sample-code/layers-featurelayer-collection/live/index.html"><img  width="600" height="400" src="images/console.png"/></a>
-- Log info
+- Log points
 - Messages from JSAPI
 
+
+----
+### **Debugging: Firefox badges **
+ - Flex
+   - Flex container has dotted outline
+   - Solid lines show flex items
+   - Background pattern shows free space 
+ - Event 
+   - Elements with eent listeners bound
+  
+
+<img src="https://mdn.mozillademos.org/files/16254/inspector_event_handlers.png"/>
+
+  [Demo](https://developers.arcgis.com/javascript/latest/sample-code/widget-timeslider/live/index.html)
 
 
 ----
@@ -162,8 +170,15 @@ Kelly Hutchins and Heather Gonzago
 <img src="images/network.png">
 </a>
 
-
 ----
+
+### **Debugging: Network requests (Firefox) **
+
+ [Edit and resend](https://developers.arcgis.com/javascript/latest/sample-code/tasks-query/live/index.html)
+
+<img height=400  src="images/editandresend.png"/>
+----
+
 ### **Debugging:  CSS Inspection**
 <div style="float:right;"><a href="https://developers.arcgis.com/javascript/latest/sample-code/geoprocessing-viewshed/live/index.html">
 <img src="images/css.png">
@@ -174,8 +189,10 @@ Inspect iem to find info about:
 - Applied styles
 - Color contrast
 - Toggle pseudo element
-
+- Changes tab (firefox)
+<img src="images/changes.png"/>
 ----
+
 
 ### **Other stuff**
 
@@ -208,7 +225,7 @@ Inspect iem to find info about:
 
 ----
 ### **Release Notes**
-<a href="https://developers.arcgis.com/javascript/latest/guide/release-notes/index.html"><img src="images/releaseNotes.png"></a>
+<a href="https://developers.arcgis.com/javascript/latest/guide/release-notes/index.html"><img src="images/releaseNotes412.png"></a>
 ----
 ### **Reading the API Reference**
 

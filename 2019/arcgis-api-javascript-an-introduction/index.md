@@ -27,7 +27,7 @@ Heather Gonzago and Kelly Hutchins
   </br>
   - Concepts remain similar between versions 3.x and 4.x</br>
   </br>
-  - <a href="https://github.com/hgonzago/DevSummit-presentations" target="_blank">https://github.com/hgonzago/DevSummit-presentations</a>
+  - <a href="https://github.com/hgonzago/UC-Presentations" target="_blank">https://github.com/hgonzago/UC-Presentations</a>
 
 ----
 

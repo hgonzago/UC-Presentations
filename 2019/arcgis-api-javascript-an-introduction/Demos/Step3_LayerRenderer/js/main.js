@@ -3,7 +3,7 @@ require([
   "esri/Map",
   "esri/layers/FeatureLayer",
   "esri/views/MapView"
-], function(Map, FeatureLayer, MapView) {
+], function (Map, FeatureLayer, MapView) {
   var defaultSym = {
     type: "simple-fill", // autocasts as new SimpleFillSymbol()
     outline: {
@@ -25,37 +25,34 @@ require([
     type: "simple", // autocasts as new SimpleRenderer()
     symbol: defaultSym,
     label: "Private school enrollment ratio",
-    visualVariables: [
-      {
-        type: "color",
-        field: "PrivateEnr",
-        stops: [
-          {
-            value: 0.044,
-            color: "#edf8fb",
-            label: "< 0.044"
-          },
-          {
-            value: 0.059,
-            color: "#b3cde3"
-          },
-          {
-            value: 0.0748,
-            color: "#8c96c6",
-            label: "0.0748"
-          },
-          {
-            value: 0.0899,
-            color: "#8856a7"
-          },
-          {
-            value: 0.105,
-            color: "#994c99",
-            label: "> 0.105"
-          }
-        ]
-      }
-    ]
+    visualVariables: [{
+      type: "color",
+      field: "PrivateEnr",
+      stops: [{
+          value: 0.044,
+          color: "#edf8fb",
+          label: "< 0.044"
+        },
+        {
+          value: 0.059,
+          color: "#b3cde3"
+        },
+        {
+          value: 0.0748,
+          color: "#8c96c6",
+          label: "0.0748"
+        },
+        {
+          value: 0.0899,
+          color: "#8856a7"
+        },
+        {
+          value: 0.105,
+          color: "#994c99",
+          label: "> 0.105"
+        }
+      ]
+    }]
   };
 
   /***********************************
@@ -80,8 +77,7 @@ require([
 
   var privateSchoolsPoint = new FeatureLayer({
     // Private Schools centroids
-    url:
-      "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Centroids/FeatureServer/0",
+    url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Centroids/FeatureServer/0",
     renderer: centroidRenderer
   });
 
@@ -90,8 +86,7 @@ require([
     // layer with rendering
     // url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/OverlaySchools/FeatureServer/0"
     // layer without rendering
-    url:
-      "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/PrivateSchoolEnrollmentNoRendering/FeatureServer/0",
+    url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/PrivateSchoolEnrollmentNoRendering/FeatureServer/0",
     outFields: ["*"],
     opacity: 0.8,
     renderer: renderer
@@ -106,10 +101,10 @@ require([
     container: "viewDiv",
     map: map,
     zoom: 3,
-    center: [-99.14725260912257, 36.48617178360141]
+    center: [-99.14, 36.48]
   });
 
-  view.when(function() {
+  view.when(function () {
     map.addMany([privateSchoolsPoly, privateSchoolsPoint]);
     // map.add(privateSchoolsPoly);
   });

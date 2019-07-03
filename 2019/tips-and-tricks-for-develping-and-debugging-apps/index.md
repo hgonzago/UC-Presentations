@@ -125,7 +125,20 @@ Kelly Hutchins and Heather Gonzago
 - Quick source viewer
 - The list goes on and on …
 
+
 ----
+
+### **Accessibility**
+
+- Audits
+- Color Contrast
+- Extensions
+- Axe Coconut (similar to Chrome Canary or Firefox nightly)
+- Axe a11y extension
+- ChromeVox screen reader
+
+----
+
 
 ### **Console:  Messages**
 </br>
@@ -141,7 +154,7 @@ Kelly Hutchins and Heather Gonzago
    - Solid lines show flex items
    - Background pattern shows free space 
  - Event 
-   - Elements with eent listeners bound
+   - Elements with event listeners bound
   
 
 <img src="https://mdn.mozillademos.org/files/16254/inspector_event_handlers.png"/>
@@ -204,18 +217,6 @@ Inspect iem to find info about:
 - Mobile emulation
 - Throttling
 - Sensors - geolocation
-
-----
-
-### **Accessibility**
-
-- Audits
-- Color Contrast
-- Extensions
-- Axe Coconut (similar to Chrome Canary or Firefox nightly)
-- Axe a11y extension
-- ChromeVox screen reader
-
 
 ----
 
@@ -324,14 +325,8 @@ Inspect iem to find info about:
 </a>
 
 
-----
+<!-- SURVEY SLIDE: -->
 
-<!-- .slide: data-background="../reveal.js/img/bg-final.jpg" -->
+<!-- .slide: data-background="../reveal.js/img/bg-5.png" -->
 
-## Questions?
-
-**Help us to improve** by filling out the survey
-
-![Survey](images/survey-slide.png)
-
-----
+---

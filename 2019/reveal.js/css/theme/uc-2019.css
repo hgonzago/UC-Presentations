@@ -33,12 +33,13 @@ body {
   color: #fff; }
 
 ::selection {
-  color: #fff;
+  color: #ffff0d;
+  ;
   background: rgba(0, 0, 0, 0.5);
   text-shadow: none; }
 
 ::-moz-selection {
-  color: #fff;
+  color: #ffff0d;
   background: rgba(0, 0, 0, 0.5);
   text-shadow: none; }
 
@@ -153,6 +154,7 @@ body {
 
 .reveal pre {
   display: block;
+  font-weight: bold;
   position: relative;
   width: 90%;
   margin: 20px auto;

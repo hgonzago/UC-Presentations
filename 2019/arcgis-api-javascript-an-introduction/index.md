@@ -76,8 +76,8 @@ Heather Gonzago and Kelly Hutchins
 </br>
 </br>
 <pre style="display:inline-block; padding: 5px; margin: 10px auto; width: 100%;"><code data-trim> 
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://js.arcgis.com/4.10/esri/css/main.css&quot;&gt; 
-&lt;script src=&quot;https://js.arcgis.com/4.10/&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://js.arcgis.com/4.12/esri/css/main.css&quot;&gt; 
+&lt;script src=&quot;https://js.arcgis.com/4.12/&quot;&gt;&lt;/script&gt;
 </code></pre>
 
 ----
@@ -86,21 +86,19 @@ Heather Gonzago and Kelly Hutchins
 </br>
 - <a href="https://developers.arcgis.com/javascript/latest/guide/styling/index.html" target="_blank"><b>Main.css</b></a> contains styles for entire API
    <pre><code data-trim>
-   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://js.arcgis.com/4.10/esri/css/main.css&quot;&gt;
+   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://js.arcgis.com/4.12/esri/css/main.css&quot;&gt;
    </code></pre>
 - <b>View.css</b> is smaller in size but better choice if only needing basic CSS (maps, widgets, etc.)
   <pre><code data-trim>
-   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://js.arcgis.com/4.10/esri/css/view.css&quot;&gt;
+   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://js.arcgis.com/4.12/esri/css/view.css&quot;&gt;
    </code></pre>
 - Custom CSS (SASS)
 
 ----
 
 ### **First steps**
-</br>
 - How will app be written?
 - Separate files or one combined file?
-</br>
 </br>
 <img style="float: center;" src="Images/Step1_Combined.png">
 
@@ -212,51 +210,45 @@ layer.watch("loadStatus", function(status) {// do something});
 ----
 
 ### **Renderers**
-</br>
-- <a href="https://developers.arcgis.com/javascript/latest/sample-code/get-started-visualization/index.html" target="_blank">Define</a> a set of symbols to use for the layer</br>
-</br>
+- <a href="https://developers.arcgis.com/javascript/latest/sample-code/get-started-visualization/index.html" target="_blank">Define</a> a set of symbols to use for the layer
 - Sets the rules on how the symbols are used</br>
-</br>
 - Basic coding pattern
 <pre style="display:inline-block; padding: 5px; margin: 10px auto; width: 99%;"><code data-trim>
-var layerRenderer = new UniqueValueRenderer(); // Set the renderer
+// Set the renderer
+var layerRenderer = new UniqueValueRenderer();
 var featurelayer = new FeatureLayer({
     url: "featurelayer url",
-    renderer: layerRenderer // pass in renderer to featurelayer using default properties
-})
-
+    // Pass in renderer to featurelayer using default properties
+    renderer: layerRenderer
+});
 </code></pre>
 
 ----
 
 ### **Symbols**
-</br>
 - Renderers use symbology, e.g. points, lines, polygons</br>
-</br>
 - Set the renderer's symbol
 <pre style="display:inline-block; padding: 5px; margin: 10px auto; width: 75%;"><code data-trim>
 var symbol = new SimpleMarkerSymbol({
-    // set the properties
+    // Set the properties
 });
 </code></pre>
 <pre style="display:inline-block; padding: 5px; margin: 10px auto; width: 75%;"><code data-trim>
 var renderer = new UniqueValueRenderer({
-    defaultSymbol: symbol, // set symbol for renderer
-    // provide anymore properties necessary
+    defaultSymbol: symbol, // Set symbol for renderer
+    // Provide any additional properties
 });
 </code></pre>
 
 ----
 
 ### **Autocasting**
-</br>
-- No need to <b>Require()</b> the module</br>
-</br>
-- Look for the <img style="float: center;" src="Images/autocast-label.png"> label in the API Reference</br>
-</br>
-- <a href="https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=layers-portal" target="_blank">Create a layer from portal item sample </a> shows autocasting in action</br>
-</br>
+
+- No need to <code>Require()</code> the module
+- Supported for all renderers, symbols, and symbol layers in the API
 - Read more about <a href="https://developers.arcgis.com/javascript/latest/guide/autocasting/index.html" target="_blank">Autocasting</a> in the Guide</br>
+- <a href="https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=visualization-location-types" target="_blank"> Check out some of the rendering samples </a> to show autocasting in action
+- Look for the <code>autocast</code> label in the API Reference
 
 ----
 
@@ -290,14 +282,16 @@ var renderer = new UniqueValueRenderer({
 <pre style="display:inline-block; padding: 5px; margin: 10px auto; width: 75%;"><code data-trim>
 var popupTemplate = new PopupTemplate({
     title: "Title of the popup",
+    // Set the content here
     content: [{
-      // Set the content here
+      ...
     }]
 });
 </code></pre>
 <pre style="display:inline-block; padding: 5px; margin: 10px auto; width: 75%;"><code data-trim>
 var featurelayer = new FeatureLayer({
-    url: "url to the feature layer",
+    // URL to the feature layer
+    url: "https://someurltoafeaturelayer/number",
     outFields: ["*"],
     popupTemplate: popupTemplate,
     renderer: renderer
@@ -317,13 +311,12 @@ var featurelayer = new FeatureLayer({
 
 ### **Using web maps**
 </br>
-- Reduces coding effort</br>
-</br>
+- Reduces coding effort
 - Retains all customizations with rendering, popups, etc. 
 <pre style="display:inline-block; padding: 5px; margin: 10px auto; width: 99%;"><code data-trim>
 var map = new WebMap({
     portalItem: {
-      id: "b45ec95aeeb743399dd4b557abd20ee2" // Remember portalItem is autocasted
+      id: "b45ec95aeeb743399dd4b557abd20ee2" // PortalItem is autocasted
     }
 });
 </code></pre>
@@ -339,23 +332,22 @@ var map = new WebMap({
 ----
 
 ### **Widgets**
-</br>
 - <a href="https://developers.arcgis.com/javascript/latest/api-reference/index.html#modules-in-esri-widgets" target="_blank">Encapsulates functionality</a>
 - Similar coding pattern across all widgets
 <pre style="display:inline-block; padding: 5px; margin: 10px auto; width: 99%;"><code data-trim>
 view.when(function){
-    var featurelayer = map.layers.getItemAt(1);
-    // 1. Create the widget
-    var legend = new Legend({
-      // 2. Specify properties for widget
-      view: view,
-      layerInfos: [{
-          layer: featurelayer,
-          title: "Name"
-      }]
+  var featurelayer = map.layers.getItemAt(1);
+  // 1. Create the widget
+  var legend = new Legend({
+    // 2. Specify properties for widget
+    view: view,
+    layerInfos: [{
+      layer: featurelayer,
+      title: "Name"
+    }]
   });
-    // 3. Add widget to the view UI
-    view.ui.add(legend, "bottom-left");
+  // 3. Add widget to the view UI
+  view.ui.add(legend, "bottom-left");
 });
 </code></pre>
 
@@ -396,7 +388,12 @@ view.ui.add(measurementWidget, "top-right");
 
 ----
 
+
+<!-- SURVEY SLIDE: -->
+<!-- .slide: data-background="Images/alias_slide.png"> -->
+
+----
+
 <!-- SURVEY SLIDE: -->
 <!-- .slide: data-background="../reveal.js/img/bg-5.png" -->
 
----

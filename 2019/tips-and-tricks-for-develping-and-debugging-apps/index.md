@@ -17,9 +17,7 @@ Kelly Hutchins and Heather Gonzago
 - ArcGIS API for JavaScript tips
 
 
-
 ----
-
 
 <!-- .slide: data-background="images/computer.jpeg" -->
 </br></br>
@@ -27,7 +25,6 @@ Kelly Hutchins and Heather Gonzago
 <h1 style="text-shadow: 2px 2px #fff;color:#333;">Developer Setup</h1>
 
 ----
-
 
 ### **Web Server**
 
@@ -50,19 +47,20 @@ Kelly Hutchins and Heather Gonzago
 - TypeScript
 - JavaScript (Babel)
 
-
 ----
 
 ### **Emmet**
 </br>
-  <video width="600" height="400" controls>
+  <video style="float: right;"  width="600" height="400" controls>
    <source src="images/emmetdemo.mp4" type="video/mp4">
   </video>
-
-- Save keystrokes
-- HTML, CSS abbreviations
-- [Plug-in page](https://emmet.io/download/)
-
+<div>
+  <ul>
+    <li>Save keystrokes</li>
+    <li>HTML, CSS abbreviations</li>
+    <li>[Plug-in page](https://emmet.io/download/)</li>
+  </ul>
+</div>
 
 ----
 
@@ -79,7 +77,6 @@ Kelly Hutchins and Heather Gonzago
 - Extensions for IDE to simplify
 - [JSAPI Snippet extension](https://marketplace.visualstudio.com/items?itemName=Esri.arcgis-jsapi-snippets)
 
-
 ----
 
 ### **JSAPI Resources**
@@ -94,10 +91,7 @@ Kelly Hutchins and Heather Gonzago
 - Build tools, e.g. Bower
 - OAuth Callback
 
-
-
 ----
-
 
 ### **Additional resources**
 
@@ -105,8 +99,6 @@ Kelly Hutchins and Heather Gonzago
 - <a href="https://odoe.net/blog/">odoenet</a>
 - <a href="https://ralucanicola.github.io/code-snippets-arcgis-api-js/index.html">3D Code Snippets cheat sheet</a>
 - <a href="https://github.com/Esri/arcade-expressions">Arcade expressions repo</a>
-
-</div>
 
 ----
 <!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
@@ -125,7 +117,6 @@ Kelly Hutchins and Heather Gonzago
 - Quick source viewer
 - The list goes on and on …
 
-
 ----
 
 ### **Accessibility**
@@ -139,31 +130,44 @@ Kelly Hutchins and Heather Gonzago
 
 ----
 
-
-### **Console:  Messages**
+### **Console: Messages**
 </br>
-<a href="https://developers.arcgis.com/javascript/latest/sample-code/layers-featurelayer-collection/live/index.html"><img  width="600" height="400" src="images/console.png"/></a>
-- Log points
-- Messages from JSAPI
-
+<a href="https://developers.arcgis.com/javascript/latest/sample-code/layers-featurelayer-collection/live/index.html" target="_blank"><img style="float: right;"  width="600" height="400" src="images/console.png"/></a>
+<div>
+  <ul>
+    <li>Log points</li>
+    <li>Messages from JavaScript API</li>
+  </ul>
+</div>
 
 ----
+
 ### **Debugging: Firefox badges **
- - Flex
-   - Flex container has dotted outline
-   - Solid lines show flex items
-   - Background pattern shows free space 
- - Event 
-   - Elements with event listeners bound
-  
 
-<img src="https://mdn.mozillademos.org/files/16254/inspector_event_handlers.png"/>
-
-  [Demo](https://developers.arcgis.com/javascript/latest/sample-code/widget-timeslider/live/index.html)
+<a href="https://developers.arcgis.com/javascript/latest/sample-code/widget-timeslider/live/index.html" target="_blank">
+<img style="float: right;" src="images/inspector_event_handlers.png" target="_blank">
+</a>
+<div>
+<ul>
+<li>Flex</li>
+  <ul>
+	<li>Flex container has dotted outline</li>
+        <li>Solid lines show flex items</li>
+        <li>Background pattern shows free space</li>
+  </ul>
+</ul>
+<ul>
+  <li>Event</li>
+  <ul>
+    <li>Elements with bound event listeners</li>
+  </ul>
+</ul>
+</div>
 
 
 ----
-### **Debugging:  Pause code execution**
+
+### **Debugging: Pause code execution**
 
 </br>
   <img style="float: right;" src="images/debugger.png">
@@ -179,31 +183,33 @@ Kelly Hutchins and Heather Gonzago
 - Inspect headers and response
 
 </br>
-<a href="https://developers.arcgis.com/javascript/latest/sample-code/geoprocessing-viewshed/live/index.html">
+<a href="https://developers.arcgis.com/javascript/latest/sample-code/geoprocessing-viewshed/live/index.html" target="_blank">
 <img src="images/network.png">
 </a>
 
 ----
 
-### **Debugging: Network requests (Firefox) **
+### **Debugging: Network requests (Firefox)**
 
  [Edit and resend](https://developers.arcgis.com/javascript/latest/sample-code/tasks-query/live/index.html)
 
 <img height=400  src="images/editandresend.png"/>
+
 ----
 
-### **Debugging:  CSS Inspection**
-<div style="float:right;"><a href="https://developers.arcgis.com/javascript/latest/sample-code/geoprocessing-viewshed/live/index.html">
-<img src="images/css.png">
-</a></div>
-Inspect iem to find info about:
-
-- CSS class names
-- Applied styles
-- Color contrast
-- Toggle pseudo element
-- Changes tab (firefox)
+### **Debugging: CSS Inspection**
+<a href="https://developers.arcgis.com/javascript/latest/sample-code/geoprocessing-viewshed/live/index.html" target="_blank">
+<img style="float: right;" src="images/css.png">
+<div>Inspect item finds info about:
+<ul><li>CSS class names</li>
+<li>Applied styles</li>
+<li>Color contrast</li>
+<li>Toggle pseudo element</li>
+<li>Changes tab (firefox)</li>
+</ul>
 <img src="images/changes.png"/>
+</div>
+
 ----
 
 
@@ -222,17 +228,21 @@ Inspect iem to find info about:
 
 <!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
 </br></br>
-## **ArcGIS API for JavaScript FAQ **
+## **ArcGIS API for JavaScript FAQ**
 
 ----
+
 ### **Release Notes**
 <a href="https://developers.arcgis.com/javascript/latest/guide/release-notes/index.html"><img src="images/releaseNotes412.png"></a>
+
 ----
+
 ### **Reading the API Reference**
 
-<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html"><img src="images/api.png"</a>
+<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html" target="_blank"><img src="images/api.png"</a>
 
 <aside class="notes">Do a deep dive into how to read the api ref here. Point out requires, beta tag?, since, autocast, hide/show inherited properties, samples and additional info. For widgets look at scss and view model links.</aside>
+
 ----
 
 ### **3.x to 4.x Feature Matrix**
@@ -244,6 +254,7 @@ Inspect iem to find info about:
 - 4.x equivalency in 3.x?
 
 ----
+
 ### **Module order matters**
 
 <img src="images/moduleordercode.png">
@@ -251,25 +262,29 @@ Inspect iem to find info about:
 <p>Console errors</p>
 <img src="images/moduleordererror.png">
 
-
 ----
 
 ### **Mixed Content**
 
-- Mixed content errors http/https
-- [Automatically switched](https://developers.arcgis.com/javascript/latest/guide/release-notes/4.8/index.html#promote-secured-services)
+- Mixed content errors specific to http/https
+- [Automatically switched](https://developers.arcgis.com/javascript/latest/guide/4.8/index.html#promote-secured-services)
+
+<a href="https://codepen.io/anon/pen/oraNEP?&editable=true&editors=100" target="_blank">
+<img src="images/mixedcontent.png"></a><br></br><br></br>
 <aside class="notes">Note: At 4.8 localhost was considered secure. This was changed at 4.9.</aside>
+
 ----
 
-### **CORS and Proxy Guides **
+### **CORS and Proxy Guides**
 
  [CORS](https://developers.arcgis.com/javascript/latest/guide/cors/)<br>
  [Proxy](https://developers.arcgis.com/javascript/latest/guide/proxies/index.html)
+
 ----
-### **Autocast **
+### **Autocast**
 
 </br>
-<a href="https://developers.arcgis.com/javascript/latest/guide/autocasting/">
+<a href="https://developers.arcgis.com/javascript/latest/guide/autocasting/" target="_blank">
 ```
  var diamondSymbol = {
    type: "simple-marker",
@@ -284,11 +299,11 @@ Inspect iem to find info about:
 </a>
 
 ----
-### **Where did all the events go? **
+### **Where did all the events go?**
 
 </br>
 
-- Watch properties
+- <a href="https://developers.arcgis.com/javascript/latest/guide/programming-patterns/#watching-for-property-changes" target="_blank">Watch properties</a>
     ```
     .watch(property, callback)
     ```
@@ -296,14 +311,16 @@ Inspect iem to find info about:
     ```
     .watch("basemap.title",function(){})
     ```
-- [Sample](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=watch-for-changes)
-- [watchUtils](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-watchUtils.html)
+- <a href= "https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=watch-for-changes" target="_blank">Sample - Watch for changes</a>
+- <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-core-watchUtils.html" target="_blank">watchUtils helper object</a>
 
 ----
 
-### ** Geolocation **
+### **Geolocation**
 
-![Search Sample](images/httpssearch.png)
+<a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-search-3d/index.html" target="_blank">
+<img src="images/httpssearch.png"></a>
+
 
 ----
 
@@ -317,16 +334,17 @@ Inspect iem to find info about:
 
 ----
 
+<!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
+</br></br>
+## **Questions???**
 
-### **Ago Assistant**
+----
 
-<a href="https://ago-assistant.esri.com/" target="_blank">
- <img style="float:center;" src="images/agoassistant.png">
-</a>
 
+<!-- .slide: data-background="images/alias_slide.png" -->
+
+----
 
 <!-- SURVEY SLIDE: -->
 
 <!-- .slide: data-background="../reveal.js/img/bg-5.png" -->
-
----

@@ -15,6 +15,7 @@ define(["esri/views/MapView", "esri/Map"], function (_MapView, _Map) {
     basemap: "streets"
   });
 
+
   var view = new _MapView2.default({
     container: "viewDiv",
     map: map,

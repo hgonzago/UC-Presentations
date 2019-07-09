@@ -23,7 +23,7 @@ Heather Gonzago and Kelly Hutchins
 
 ----
 
-### **Presentations accessible via GitHub**
+### **Slides and demos accessible via GitHub**
   </br>
   - This session focuses on version 4.x</br>
   </br>

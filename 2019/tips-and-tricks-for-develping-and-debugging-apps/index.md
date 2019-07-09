@@ -170,7 +170,9 @@ Kelly Hutchins and Heather Gonzago
 ### **Debugging: Pause code execution**
 
 </br>
+<a href="http://heatherg-2.esri.com/Demos/UC/UC2019/Tips-Tricks-Debugging/UpdateAttributes.html" target="_blank">
   <img style="float: right;" src="images/debugger.png">
+  </a>
 
 - Breakpoints
 - Debugger;
@@ -257,7 +259,10 @@ Kelly Hutchins and Heather Gonzago
 
 ### **Module order matters**
 
+
+<a href="http://heatherg-2.esri.com/gitprojects/DevSummit-presentations/Dev-Summit-2019/Getting-started-web-dev/demos/Step2_Layer/" target="_blank">
 <img src="images/moduleordercode.png">
+</a>
 <br>
 <p>Console errors</p>
 <img src="images/moduleordererror.png">

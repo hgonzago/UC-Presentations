@@ -376,3 +376,13 @@ Visualize data within Map or Scene
 <img style="display: block; margin-left: auto; margin-right: auto;" src="Images/4dot14_Support.png" alt="4dot10_Support" width="749" height="415"></a>
 
 ----
+
+### 2020 DevSummit Technical Sessions
+
+![DevSummit sessions blog](Images/devsummit-blog.png)
+
+28 videos focused on developing with the JS API!
+<a href="https://esriurl.com/ds2020jsblog"><code>https://esriurl.com/ds2020jsblog<code></a>
+
+----
+<!-- .slide: data-background="../reveal.js/img/bg-5.png" -->

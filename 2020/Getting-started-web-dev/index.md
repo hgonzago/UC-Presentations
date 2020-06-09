@@ -5,7 +5,20 @@
 ### and the ArcGIS API for JavaScript
 Heather Gonzago and Anne Fitz
 
-<small>👉 Slides & demos: <code>https://bit.ly/3cnPptf</code> 👈</small>
+<small>👉 Slides & demos: <code>https://bit.ly/2YgOdBH</code> 👈</small>
+
+----
+
+### **Introductions**
+
+<div style="width:48%; float:left;">
+Heather Gonzago
+
+</div>
+<div style="width:48%; float:right; border-left: 2px solid white; padding: 10px;">
+<img src="Images/anne.png"></img></br>
+Anne Fitz</br>
+</div>
 
 ----
 
@@ -27,21 +40,27 @@ Heather Gonzago and Anne Fitz
   </br>
   - Concepts remain similar between versions 3.x and 4.x</br>
   </br>
-  - 👉 Slides & demos: <code>https://bit.ly/3cnPptf</code> 👈
+  - 👉 Slides & demos: <code>https://bit.ly/2YgOdBH</code> 👈
 
 ----
 
 ### **Where do I begin?**
 <a href="https://developers.arcgis.com/javascript/" target="_blank">
-<img src="Images/landingPage_414.png" alt="JavaScript landing page" width="1284" height="630">
+<img src="Images/landingPage_416.png" alt="JavaScript landing page" width="1200">
 </a>
 
 ----
 
 ### **Which version of the API is best?**
 <a href="https://developers.arcgis.com/javascript/latest/guide/choose-version/index.html" target="_blank">
-<img src="Images/Choose_Your_Own_Version_414.png" alt="API functionality matrix" width="1206" height="651">
+<img src="Images/Choose_version_416.png" alt="API functionality matrix" width="1200">
 </a>
+
+----
+<!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
+</br></br>
+### Set up and first steps
+#### Anne Fitz
 
 ----
 
@@ -104,7 +123,7 @@ Heather Gonzago and Anne Fitz
 - How will your app be written?
 - Separate files or one combined file?
 </br>
-<img style="float: center;" src="Images/Step1_Combined_414.png">
+<img style="float: center;" src="Images/Step1_Combined_416.png">
 
 ----
 
@@ -142,6 +161,14 @@ Visualize data within Map or Scene
 - Module order makes a difference
 - Missing module <img style="float:right;" src="Images/requireNotDefined.png">
 - Missing CSS <img style="float:right; width:80%" src="Images/merged-css.png">
+
+----
+<!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
+</br></br>
+
+### Adding and styling layers
+
+#### Heather Gonzago
 
 ----
 
@@ -243,6 +270,12 @@ Visualize data within Map or Scene
 </a>
 
 ----
+<!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
+</br></br>
+### Map interaction with Popups
+#### Anne Fitz
+
+----
 
 ### **Map interaction using popups**
 </br>
@@ -283,6 +316,12 @@ Visualize data within Map or Scene
 </a>
 
 ----
+<!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
+</br></br>
+### Filtering data
+#### Heather Gonzago
+
+----
 
 ### **Filtering data**
 
@@ -303,6 +342,12 @@ Visualize data within Map or Scene
 <a href="Demos/Step5_LayerFilter/" target="_blank">
   <img style="float: center;" src="Images/Step5_Demo.png">
 </a>
+
+----
+<!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
+</br></br>
+### Webmaps and Widgets
+#### Anne Fitz
 
 ----
 
@@ -335,7 +380,7 @@ Visualize data within Map or Scene
 </br>
 </br>
 <iframe
-  src="https://carbon.now.sh/embed?bg=rgba(194%2C186%2C206%2C1)&t=one-light&wt=sharp&l=auto&ds=true&dsyoff=3px&dsblur=13px&wc=true&wa=true&pv=30px&ph=36px&ln=false&fl=1&fm=Hack&fs=18px&lh=132%25&si=false&es=4x&wm=false&code=view.when(function)%257B%250A%2520%2520const%2520featurelayer%2520%253D%2520map.layers.getItemAt(1)%253B%250A%2520%2520%252F%252F%25201.%2520Create%2520the%2520widget%250A%2520%2520const%2520legend%2520%253D%2520new%2520Legend(%257B%250A%2520%2520%2520%2520%252F%252F%25202.%2520Specify%2520properties%2520for%2520widget%250A%2520%2520%2520%2520view%253A%2520view%252C%250A%2520%2520%2520%2520layerInfos%253A%2520%255B%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520layer%253A%2520featurelayer%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520title%253A%2520%2522Name%2522%250A%2520%2520%2520%2520%257D%255D%250A%257D)%253B%250A%2520%2520%252F%252F%25203.%2520Add%2520widget%2520to%2520the%2520view%2520UI%250A%2520%2520view.ui.add(legend%252C%2520%2522top-right%2522)%253B%250A%257D)%253B"
+  src="https://carbon.now.sh/embed?bg=rgba(194%2C186%2C206%2C1)&t=one-light&wt=sharp&l=auto&ds=true&dsyoff=3px&dsblur=13px&wc=true&wa=true&pv=30px&ph=36px&ln=false&fl=1&fm=Hack&fs=18px&lh=132%25&si=false&es=4x&wm=false&code=view.when(function)%257B%250A%2520%2520const%2520featurelayer%2520%253D%2520map.layers.getItemAt(1)%253B%250A%2520%2520%252F%252F%25201.%2520Create%2520the%2520widget%250A%2520%2520const%2520legend%2520%253D%2520new%2520Legend(%257B%250A%2520%2520%2520%2520%252F%252F%25202.%2520Specify%2520properties%2520for%2520widget%250A%2520%2520%2520%2520view%253A%2520view%252C%250A%2520%2520%2520%2520layerInfos%253A%2520%255B%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520layer%253A%2520featurelayer%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520title%253A%2520%2522Name%2522%250A%2520%2520%2520%2520%257D%255D%250A%2520%2520%257D)%253B%250A%2520%2520%252F%252F%25203.%2520Add%2520widget%2520to%2520the%2520view%2520UI%250A%2520%2520view.ui.add(legend%252C%2520%2522top-right%2522)%253B%250A%257D)%253B"
   style="transform:scale(1); width:675px; height:473px; border:0; overflow:hidden; display:block;"
   sandbox="allow-scripts allow-same-origin">
 </iframe>
@@ -351,7 +396,7 @@ Visualize data within Map or Scene
 </br>
 </br>
 <iframe
-  src="https://carbon.now.sh/embed?bg=rgba(194%2C186%2C206%2C1)&t=one-light&wt=sharp&l=auto&ds=true&dsyoff=3px&dsblur=13px&wc=true&wa=true&pv=30px&ph=36px&ln=false&fl=1&fm=Hack&fs=18px&lh=132%25&si=false&es=4x&wm=false&code=view.ui.add(legend%252C%2520%2522bottom-left%2522)%253B%250Aview.ui.add(swipe)%253B"
+  src="https://carbon.now.sh/embed?bg=rgba(194%2C186%2C206%2C1)&t=one-light&wt=sharp&l=auto&ds=true&dsyoff=3px&dsblur=13px&wc=true&wa=true&pv=30px&ph=36px&ln=false&fl=1&fm=Hack&fs=18px&lh=132%25&si=false&es=4x&wm=false&code=view.ui.add(legend%252C%2520%2522bottom-left%2522)%253B"
   style="transform:scale(1); width:624px; height:273px; border:0; overflow:hidden; display:block;"
   sandbox="allow-scripts allow-same-origin">
 </iframe>
@@ -359,7 +404,6 @@ Visualize data within Map or Scene
 ----
 
 ### **Demo: Add widgets to the application**
-</br>
 <a href="Demos/Step7_Widgets/" target="_blank">
   <img style="float: center;" src="Images/Step7_Demo.png">
 </a>

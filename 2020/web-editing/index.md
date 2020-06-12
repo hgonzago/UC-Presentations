@@ -216,7 +216,7 @@ Arno Fiva</br>
 
 ### 2020 DevSummit Technical Sessions
 
-![DevSummit sessions blog](Images/devsummit-blog.png)
+![DevSummit sessions blog](images/devsummit-blog.png)
 
 28 videos focused on developing with the JS API!
 <a href="https://esriurl.com/ds2020jsblog"><code>https://esriurl.com/ds2020jsblog<code></a>

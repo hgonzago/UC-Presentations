@@ -5,11 +5,6 @@
 * [Presentation](https://hgonzago.github.io/UC-Presentations/2020/Getting-started-web-dev/)
 * [Demos](https://hgonzago.github.io/UC-Presentations/2020/Getting-started-web-dev/Demos/)
 
-## ArcGIS API for JavaScript: Tips and Tricks for Developing and Debugging Apps
-
-* [Presentation](https://hgonzago.github.io/UC-Presentations/2020/tips-and-tricks-for-develping-and-debugging-apps/)
-* [Demos](https://hgonzago.github.io/UC-Presentations/2020/tips-and-tricks-for-develping-and-debugging-apps/Demos/)
-
 ## ArcGIS API for JavaScript: Web Editing in 2D and 3D
 
 * [Presentation](https://hgonzago.github.io/UC-Presentations/2020/web-editing/)

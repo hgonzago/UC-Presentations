@@ -75,13 +75,17 @@ Anne Fitz</br>
 ### **JSAPI Resources**
 </br>
 <a href="https://github.com/Esri/jsapi-resources" target="_blank">
-<img style="float: right;" alt="JSAPI resources" src="Images/jsapiResources_2.png" width="790" height="577">
+<img style="float: right;" alt="JSAPI resources" src="Images/jsapiResources_2.png" width="750" height="577">
 </a>
- - Includes
-   - JSHint file
-   - TypeScript definition file
-   - Build tools (Webpack, npm)
-   - <a href="https://developers.arcgis.com/javascript/latest/guide/using-frameworks/" target="_blank">Working with frameworks</a>
+<div style="width:40%; float:left;">
+Includes
+<ul>
+  <li>JSHint file</li>
+  <li>TypeScript definition file</li>
+  <li>Build tools (Webpack, npm)</li>
+  <li><a href="https://developers.arcgis.com/javascript/latest/guide/using-frameworks/" target="_blank">Working with frameworks</a></li>
+</ul>
+</div>
 
 ----
 

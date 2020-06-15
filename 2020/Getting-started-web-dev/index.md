@@ -12,9 +12,10 @@ Heather Gonzago and Anne Fitz
 ### **Introductions**
 
 <div style="width:48%; float:left;">
-Heather Gonzago
-
+<img src="Images/heather.jpg"></img></br>
+Heather Gonzago</br>
 </div>
+
 <div style="width:48%; float:right; border-left: 2px solid white; padding: 10px;">
 <img src="Images/anne.png"></img></br>
 Anne Fitz</br>

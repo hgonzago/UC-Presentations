@@ -266,9 +266,9 @@ require([
     // click event handler for crime amount choices
     crimesElement.addEventListener("click", filterByCrimeAmount);
 
-    // User clicked on Winter, Spring, Summer or Fall
-    // set an attribute filter on flood warnings layer view
-    // to display the warnings issued in that season
+    // User clicked on > 100, 50-99, or < 50
+    // set an attribute filter on the feature layer view
+    // to only show the features that fit that crime count amount
     function filterByCrimeAmount(event) {
       const selectedCrimeAmount = event.target.getAttribute("data-crime");
 

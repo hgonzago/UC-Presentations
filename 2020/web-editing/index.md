@@ -7,25 +7,23 @@
 
 #### Heather Gonzago, Juan Carlos Franco, and Arno Fiva
 
-### <small>Slides & demos: https://bit.ly/2XSUpAC </small>
-
 ----
 
-### **Introductions**
+### <small>Slides & demos: https://bit.ly/2XSUpAC </small>
 
 <div style="display:flex; height: 100%;">
-  <div style="width:48%; display:flex; flex-direction: column;">
-    <img src="need image" height="600" />
+  <div style="width:100%; display:flex; flex-direction: column;">
+    <img src="images/Heather.jpg" height="521" />
     Heather Gonzago
   </div>
 
-  <div style="width:48%; display:flex; flex-direction: column;">
-    <img src="need image" height="600" />
+  <div style="width:100%; display:flex; flex-direction: column;">
+    <img src="images/Franco.jpg" height="521" />
     Juan Carlos Franco
   </div>
 
-  <div style="width:48%; display:flex; flex-direction: column;">
-    <img src="need image" height="600" />
+  <div style="width:100%; display:flex; flex-direction: column;">
+    <img src="images/Arno.jpg" height="521" />
     Arno Fiva
   </div>
 </div>

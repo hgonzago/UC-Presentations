@@ -114,18 +114,6 @@
   <img style="float: center;" src="images/editor-in-action.gif">
 </a>
 
-----
-
-### **Recap: Configurable Widgets**
-
-<br>
-
-- <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html" target="_blank">Editor</a>
-  - Comprised of other widgets
-    - <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html" target="_blank">FeatureForm</a> - Form based editing
-    - <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Sketch.html" target="_blank">Sketch</a> - Geometry based editing
-  - Responsible for applying updates to the FeatureLayer
-    - FeatureForm and Sketch are _client-side_
 
 ----
 

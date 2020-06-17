@@ -13,19 +13,21 @@
 
 ### **Introductions**
 
-<div style="width:48%; float:left;">
-<img src="need image">add image here</img></br>
-Heather Gonzago</br>
-</div>
+<div style="display:flex; height: 100%;">
+  <div style="width:48%; display:flex; flex-direction: column;">
+    <img src="need image" height="600" />
+    Heather Gonzago
+  </div>
 
-<div style="width:48%; float:right; border-left: 2px solid white; padding: 10px;">
-<img src="need image">add image here</img></br>
-Juan Carlos Franco</br>
-</div>
+  <div style="width:48%; display:flex; flex-direction: column;">
+    <img src="need image" height="600" />
+    Juan Carlos Franco
+  </div>
 
-<div style="width:48%; float:right; border-left: 2px solid white; padding: 10px;">
-<img src="need image">add image here</img></br>
-Arno Fiva</br>
+  <div style="width:48%; display:flex; flex-direction: column;">
+    <img src="need image" height="600" />
+    Arno Fiva
+  </div>
 </div>
 
 ----
@@ -115,14 +117,6 @@ Arno Fiva</br>
 </a>
 
 ----
-<!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
-</br></br>
-
-### 2d Editing Workflows
-
-#### Juan Carlos Franco
-
-----
 
 ### **Recap: Configurable Widgets**
 
@@ -134,6 +128,15 @@ Arno Fiva</br>
     - <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Sketch.html" target="_blank">Sketch</a> - Geometry based editing
   - Responsible for applying updates to the FeatureLayer
     - FeatureForm and Sketch are _client-side_
+
+----
+
+<!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
+</br></br>
+
+### 2d Editing Workflows
+
+#### Juan Carlos Franco
 
 ----
 
@@ -190,6 +193,7 @@ Arno Fiva</br>
 - [Creating custom tools using SketchViewModel](Demos/sketch-custom-tools/sketch-custom-tools.html)
 
 ----
+
 <!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
 </br></br>
 
@@ -222,8 +226,9 @@ Arno Fiva</br>
 <a href="https://esriurl.com/ds2020jsblog"><code>https://esriurl.com/ds2020jsblog<code></a>
 
 ----
+
 <!-- .slide: data-background="../reveal.js/img/bg-5.png" -->
 
----
+----
 
 <!-- .slide: data-background="../reveal.js/img/bg-rating.png" -->

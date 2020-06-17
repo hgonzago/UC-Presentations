@@ -1,7 +1,7 @@
 <!-- .slide: data-background="../reveal.js/img/bg-1.png" -->
 <!-- .slide: class="title" -->
-</br>
-</br>
+<br>
+<br>
 ### ArcGIS API for JavaScript: 
 ### Web Editing in 2D and 3D
 
@@ -43,7 +43,7 @@
 
 ### **Editing in a feature service**
 
-</br>
+<br>
 
 - <a href="https://developers.arcgis.com/rest/services-reference/feature-service.htm" target="_blank">Editable</a>
 - One or more feature layers
@@ -53,7 +53,7 @@
 
 ### 👉 **Set constraints at the service level** 👈
 
-</br>
+<br>
 
 - Can be set **but not enforced** in web clients
 - Consistent behavior across all clients
@@ -68,7 +68,7 @@
 
 ### **Edit a feature layer**
 
-</br>
+<br>
 * <a href="https://developers.arcgis.com/rest/services-reference/feature-service.htm" target="_blank">ArcGIS REST API</a>
 * <a href="https://doc.arcgis.com/en/arcgis-online/manage-data/edit-features.htm" target="_blank">ArcGIS Online</a>
 * <a href="https://developers.arcgis.com/python/guide/editing-features/" target="_blank">ArcGIS API for Python</a>
@@ -78,7 +78,7 @@
 
 ### **ArcGIS API for JavaScript**
 
-</br>
+<br>
 
 🔑 Configurable widgets
 
@@ -90,7 +90,7 @@
 
 ### **Configurable Widgets**
 
-</br>
+<br>
 
 - <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html" target="_blank">Editor</a>
   - Geometry: <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Sketch.html" target="_blank">Sketch</a>
@@ -101,7 +101,7 @@
 
 ### **Granular APIs**
 
-</br>
+<br>
 
 - <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Sketch-SketchViewModel.html" target="_blank">SketchViewModel</a>
 - <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GraphicsLayer.html" target="_blank">GraphicsLayer</a>
@@ -120,7 +120,7 @@
 
 ### **Recap: Configurable Widgets**
 
-</br>
+<br>
 
 - <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html" target="_blank">Editor</a>
   - Comprised of other widgets
@@ -132,7 +132,7 @@
 ----
 
 <!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
-</br></br>
+<br><br>
 
 ### 2d Editing Workflows
 
@@ -150,7 +150,8 @@
 
 ## [FeatureForm](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html)
 
-</br>
+<br>
+
 * Renders input fields from fields & attributes
 * Configurable
   * Field order
@@ -195,7 +196,7 @@
 ----
 
 <!-- .slide: data-background="../reveal.js/img/bg-3.png" -->
-</br></br>
+<br><br>
 
 ### 3d Editing Workflows
 
@@ -208,12 +209,12 @@
 ----
 
 <!-- .slide: data-background="../reveal.js/img/bg-4.png" -->
-</br>
+<br>
 
 ## Slides and Demos
 
-</br>
-</br>
+<br>
+<br>
 👉Slides & demos: https://bit.ly/2XSUpAC 👈
 
 ----

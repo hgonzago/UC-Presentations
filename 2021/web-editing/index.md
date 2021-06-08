@@ -53,8 +53,6 @@
 ----
 
 ### **Edit a feature layer**
-
-<br>
 * <a href="https://developers.arcgis.com/rest/services-reference/feature-service.htm" target="_blank">ArcGIS REST API</a>
 * <a href="https://doc.arcgis.com/en/arcgis-online/manage-data/edit-features.htm" target="_blank">ArcGIS Online</a>
 * <a href="https://developers.arcgis.com/python/guide/editing-features/" target="_blank">ArcGIS API for Python</a>
@@ -82,7 +80,7 @@
   - Geometry: <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Sketch.html" target="_blank">Sketch</a>
   - Fields/attributes: <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html" target="_blank">FeatureForm</a>
   - <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTemplates.html" target="_blank">FeatureTemplates</a>
-
+- <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html" target="_blank">FeatureTable</a>
 ----
 
 ### **Granular APIs**
@@ -96,10 +94,18 @@
 
 ----
 
-### **[Editor](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html) widget**
+### [Editor](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html) widget
 
 <a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-editor-basic/index.html" target="_blank">
-  <img style="float: center;" src="images/editor-in-action.gif">
+  <img style="float: center;" src="images/end-to-end-editing.gif">
+</a>
+
+----
+
+### [FeatureTable(https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html) widget
+
+<a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-editor-basic/index.html" target="_blank">
+  <img style="float: center;" src="images/end-to-end-editing.gif">
 </a>
 
 ----
@@ -109,42 +115,7 @@
 
 ### 2d Editing Workflows
 
-#### Juan Carlos Franco
-
-----
-
-### **Form-based**
-
-[<img src="images/ff-in-action.gif" height="600" style="margin-left:10px; margin-right: 10px;"/>](https://developers.arcgis.com/javascript/latest/sample-code/editing-groupedfeatureform/index.html)
-
-☝ `FeatureForm`
-
-----
-
-## [FeatureForm](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html)
-
-<br>
-
-* Renders input fields from fields & attributes
-* Configurable
-  * Field order
-  * Label/description
-  * Groups
-  * Visibility expression
-
-----
-
-### **FeatureForm demo**
-
-[<img src="images/ff-demo.png" height="600" style="margin-left:10px; margin-right: 10px;"/>](Demos/feature-form/index.html)
-
-----
-
-### **Geometry-based**
-
-<a href="https://developers.arcgis.com/javascript/latest/sample-code/sketch-geometries/index.html"><img src="images/sketch-basic-updating.png" height="600" style="margin-left:10px; margin-right: 10px;"/></a>
-
-☝ `Sketch`
+#### Jonathan Uilhein
 
 ----
 

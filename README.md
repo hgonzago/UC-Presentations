@@ -2,6 +2,11 @@
 
 Here you can access the presentations and demos used in past years' UC sessions.
 
+## 2021
+
+* [ArcGIS API for JavaScript: Web Editing in 2D and 3D](https://hgonzago.github.io/UC-Presentations/2021/web-editing/)
+
+
 ## 2020
 
 * [Getting Started with Web Development and the ArcGIS API for JavaScript](https://hgonzago.github.io/UC-Presentations/2020/Getting-started-web-dev)

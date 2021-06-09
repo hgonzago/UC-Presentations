@@ -9,7 +9,7 @@
 
 ----
 
-### <small>Slides & demos: https://shorturl.at/yN157 </small>
+### <small>Slides & demos: https://shorturl.at/yN157</small>
 
 ----
 

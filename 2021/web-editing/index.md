@@ -9,7 +9,7 @@
 
 ----
 
-### <small>Slides & demos: https://shorturl.at/yN157</small>
+### <small>Slides & demos: https://bit.ly/3itKZGD</small>
 
 ----
 
@@ -151,7 +151,7 @@
 <!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" -->
 ## Slides and Demos
 
-<a href="https://shorturl.at/yN157">https://shorturl.at/yN157</a>
+<a href="https://bit.ly/3itKZGD">https://bit.ly/3itKZGD</a>
 
 ----
 

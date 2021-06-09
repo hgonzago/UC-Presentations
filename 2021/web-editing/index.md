@@ -7,11 +7,9 @@
 #### Jonathan Uilhein
 #### Arno Fiva
 
-#### http://bit.ly/editing2dds21 (UPDATE THIS)
-
 ----
 
-### <small>Slides & demos: https://bit.ly/2XSUpAC </small>
+### <small>Slides & demos: https://shorturl.at/yN157 </small>
 
 ----
 
@@ -36,7 +34,7 @@
 
 ----
 
-### 👉 **Set constraints at the service level** 👈
+### **Constraints set at the service level**
 
 <br>
 
@@ -102,16 +100,15 @@
 
 ----
 
-### [FeatureTable(https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html) widget
+### [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget
 
-<a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-editor-basic/index.html" target="_blank">
-  <img style="float: center;" src="images/end-to-end-editing.gif">
+<a href="demos/featuretable-editing.html" target="_blank">
+  <img style="float: center;" src="images/featuretable-demo.gif">
 </a>
 
 ----
 
 <!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" -->
-<br><br>
 
 ### 2d Editing Workflows
 
@@ -140,7 +137,6 @@
 ----
 
 <!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" -->
-<br><br>
 
 ### 3d Editing Workflows
 
@@ -148,32 +144,31 @@
 
 ----
 
-### **\* Arno adds his section specific to 3d stuff**
+### **Arno adds his section specific to 3d stuff**
+
+----
+
+<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" -->
+## Slides and Demos
+
+<a href="https://shorturl.at/yN157">https://shorturl.at/yN157</a>
+
+----
+
+
+<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" -->
+## Questions
 
 ----
 
 <!-- .slide: data-background="../reveal.js/img/2021/uc/bg-4.png" -->
-<br>
 
-## Slides and Demos
+### **We want your feedback**
 
-<br>
-<br>
-👉Slides & demos: https://bit.ly/2XSUpAC 👈
-
-----
-
-### 2020 DevSummit Technical Sessions
-
-![DevSummit sessions blog](images/devsummit-blog.png)
-
-28 videos focused on developing with the JS API!
-<a href="https://esriurl.com/ds2020jsblog"><code>https://esriurl.com/ds2020jsblog<code></a>
+Click on the </br>
+**Session Survey** link </br>
+below this video window
 
 ----
 
-<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-5.png" -->
-
-----
-
-<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-5.png" -->
+<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-6.png" -->

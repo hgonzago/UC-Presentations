@@ -1,0 +1,156 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+  <title>FeatureTable widget with editing enabled | Sample | ArcGIS API for JavaScript 4.19</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.19/esri/themes/light/main.css" />
+  <script src="https://js.arcgis.com/4.19/"></script>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #viewDiv {
+      height: 50%;
+      width: 100%;
+    }
+
+    .container {
+      height: 50%;
+      width: 100%;
+    }
+
+  </style>
+
+  <script>
+    require([
+          "esri/Map",
+          "esri/views/MapView",
+          "esri/layers/FeatureLayer",
+          "esri/widgets/FeatureTable"
+        ], (Map, MapView, FeatureLayer, FeatureTable) => {
+
+          let featureLayer;
+          const features = [];
+
+          const map = new Map({
+            basemap: "streets-navigation-vector"
+          });
+
+          let view = new MapView({
+            container: "viewDiv",
+            map: map,
+            center: [-80.84, 35.11],
+            zoom: 11,
+            popup: {
+              autoOpenEnabled: false
+            } //disable popups
+          });
+
+          view.when(() => {
+            featureLayer = new FeatureLayer({
+              portalItem: {
+                id: "7252a8de226f4b039169b4a85ec5f1a6"
+              },
+              outFields: ["*"],
+              title: "Hazards in and around Charlotte"
+            });
+            map.add(featureLayer);
+
+            // Create the feature table
+            const featureTable = new FeatureTable({
+              view: view,
+              layer: featureLayer,
+              editingEnabled: true,
+              menuConfig: {
+                items: [{
+                  label: "Zoom to feature(s)",
+                  iconClass: "esri-icon-zoom-in-magnifying-glass",
+                  clickFunction: function(event) {
+                    zoomToSelectedFeature();
+                  }
+                }]
+              },
+              // Autocast the FieldColumnConfigs
+              fieldConfigs: [{
+                name: "HazardType",
+                label: "Hazard type"
+              },
+              {
+                name: "Description",
+                label: "Description"
+              },
+              {
+                name: "Status",
+                label: "Status"
+              },
+              {
+                name: "Priority",
+                label: "Priority"
+              }],
+              container: document.getElementById("tableDiv")
+            });
+
+            // Get the FeatureLayer's layerView and listen for the table's selection-change event
+            featureTable.on("selection-change", (changes) => {
+              // If the selection is removed, remove the feature from the array
+              changes.removed.forEach((item) => {
+                const data = features.find((data) => {
+                  return data.feature === item.feature;
+                });
+                if (data) {
+                  features.splice(features.indexOf(data), 1);
+                }
+              });
+
+              // If the selection is added, push all added selections to array
+                changes.added.forEach((item) => {
+                  const feature = item.feature;
+                  features.push({
+                    feature: feature
+                  });
+                });
+              });
+                      
+              function zoomToSelectedFeature() {
+                // Create a query off of the feature layer
+                const query = featureLayer.createQuery();
+                // Iterate through the features and grab the feature's objectID
+                const featureIds = features.map((result) => {
+                  return result.feature.getAttribute(featureLayer.objectIdField);
+                });
+                // Set the query's objectId
+                query.objectIds = featureIds;
+                // Make sure to return the geometry to zoom to
+                query.returnGeometry = true;
+                // Call queryFeatures on the feature layer and zoom to the resulting features
+                featureLayer.queryFeatures(query).then((results) => {
+                  view.goTo(results.features).catch((error) => {
+                    if (error.name != "AbortError") {
+                      console.error(error);
+                    }
+                  });
+                });
+              }
+          });
+    });
+
+    
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+  <div class="container">
+    <div id="tableDiv"></div>
+  </div>
+</body>
+
+</html>

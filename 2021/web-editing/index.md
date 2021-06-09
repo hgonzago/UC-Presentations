@@ -104,7 +104,7 @@
 ### [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget
 
 <a href="demos/featuretable-editing.html" target="_blank">
-  <img style="float: center;" src="images/featuretable-demo.gif">
+  <img style="float: center;" src="images/featuretable-editing.gif">
 </a>
 
 ----

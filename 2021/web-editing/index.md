@@ -122,6 +122,19 @@
 
 ---
 
+### **Recap: Configurable Widgets**
+
+</br>
+
+- <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html" target="_blank">Editor</a>
+  - Comprised of other widgets
+    - <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html" target="_blank">FeatureForm</a> - Form based editing
+    - <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Sketch.html" target="_blank">Sketch</a> - Geometry based editing
+  - Responsible for applying updates to the FeatureLayer
+    - FeatureForm and Sketch are _client-side_
+
+---
+
 ### **Form-based**
 
 <a href="https://developers.arcgis.com/javascript/latest/sample-code/editing-groupedfeatureform/index.html"><img src="images/ff-in-action.gif" height="460" style="margin-left:10px; margin-right: 10px;"/></a>
@@ -145,7 +158,9 @@
 
 ### **FeatureForm demo**
 
-[<img src="images/ff-demo.png" height="600" style="margin-left:10px; margin-right: 10px;"/>](Demos/feature-form/index.html)
+[<img src="images/ff-demo.png" height="400px" style="margin-left:10px; margin-right: 10px;"/>](Demos/feature-form/index.html)
+
+- [(2020) Web Editing in 2D and 3D](https://www.youtube.com/watch?v=m0m7F8FuAlc) https://www.youtube.com/watch?v=m0m7F8FuAlc
 
 ---
 
@@ -163,6 +178,8 @@
 - Provides two major workflows (or operations)
   - create
   - update (includes delete)
+- Each workflow has a subset of available tools
+  - e.g. 'point', 'polygon', 'rectangle', 'transform' 'reshape'
 - Configurable options for both workflows
 - Manages user interactions with the view internally
   - Can be disabled to provide more control directly to developers

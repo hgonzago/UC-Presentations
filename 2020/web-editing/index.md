@@ -2,7 +2,7 @@
 <!-- .slide: class="title" -->
 <br>
 <br>
-### ArcGIS API for JavaScript: 
+### ArcGIS API for JavaScript:
 ### Web Editing in 2D and 3D
 
 #### Heather Gonzago, Juan Carlos Franco, and Arno Fiva

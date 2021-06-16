@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Sketch Custom Tools</title>
+    
+    <link rel="stylesheet" href="https://js.arcgis.com/4.20/esri/css/main.css" />
+    <script src="https://js.arcgis.com/4.20/"></script>
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #draw-container {
+        background: #fff;
+        border: 1px solid #d3d3d3;
+      }
+
+      .button-container {
+        display: flex;
+        height: 100%;
+      }
+
+      .button-container label {
+        margin: 0 auto;
+        padding: 4px;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+    </style>
+
+    <script>
+      require([
+        "esri/Graphic",
+        "esri/Map",
+        "esri/core/Handles",
+        "esri/geometry/geometryEngine",
+
+        "esri/layers/FeatureLayer",
+        "esri/layers/GraphicsLayer",
+        "esri/symbols/SimpleLineSymbol",
+
+        "esri/views/MapView",
+        "esri/widgets/Sketch",
+        "dojo/domReady!"
+      ], function(
+        Graphic, Map, Handles, geometryEngine, 
+        FeatureLayer, GraphicsLayer, SimpleLineSymbol, 
+        MapView, Sketch
+      ) {
+
+        // Required by 'Sketch'
+        const layer = new GraphicsLayer();
+
+        // Layer containing snapping candidates
+        const pdxBikePathsFL = new FeatureLayer({
+          url: "https://servicesqa.arcgis.com/SdQnSRS214Ul5Jv5/ArcGIS/rest/services/FL__3857__US_Portland__BikePaths/FeatureServer/0"
+        });
+
+        const map = new Map({
+          basemap: "gray",
+          layers: [pdxBikePathsFL, layer]
+        });
+
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          extent: {
+            xmax: -13656601.041805588,
+            xmin: -13660422.893219948,
+            ymax: 5707087.317567461,
+            ymin: 5703265.466153101,
+            spatialReference: 102100
+          }
+        });
+
+        // Used to distinguish the 'cut' tool symbol
+        const customPolylineSymbol = new SimpleLineSymbol({
+          style: "dash",
+          color: [12, 207, 255],
+          width: 2
+        });
+
+        let activeCustomOperation = null;
+
+        view.ui.add("draw-container", "top-right");
+
+        view.when(function(evt) {
+          document.getElementById("draw-container").classList.remove("hidden");
+
+          const sketch = new Sketch({
+            layer,
+            view,
+            // Snapping is turned on by default
+            // Snapping to self is enabled (e.g. right angles, parallel lines) 
+            // Snapping to other features is enabled
+            // Specific layers to search for snapping candidates
+            snappingOptions: {
+              enabled: true,
+              selfEnabled: true,
+              featureEnabled: true,
+              featureSources: [{ layer: pdxBikePathsFL }, { layer }]
+            }
+          }, "sketch");
+
+          // Widget defaults
+          const defaultCreationMode = sketch.creationMode;
+          const defaultPolylineSymbol = sketch.viewModel.polylineSymbol;
+
+          //--------------------------------------------------------------------------
+          //
+          //  General tools
+          //
+          //--------------------------------------------------------------------------
+
+          const cutButton = document.getElementById("cutBtn");
+          const magnifyBtn = document.getElementById("magnifyBtn");
+          const highlightCheckbox = document.getElementById("highlightCheckbox");
+          let magnifyHandle = null;
+          
+          // Toggle magnifier
+          magnifyBtn.onclick = () => {
+            if (magnifyHandle) {
+              view.magnifier.position = null;
+              magnifyHandle.remove();
+              magnifyHandle = null;
+              magnifyBtn.classList.remove("esri-icon-zoom-out-magnifying-glass");
+              magnifyBtn.classList.remove("esri-sketch__button--selected");
+              magnifyBtn.classList.add("esri-icon-zoom-in-magnifying-glass");
+              return;
+            }
+
+            // Offset the magnifier to make visual comparison easier
+            const offset = view.magnifier.size / 2;
+            view.magnifier.offset = { x: offset, y: offset };
+
+            // Update position of the magnifier based on mouse-movement
+            magnifyHandle = view.on("pointer-move", function (event) {
+              view.magnifier.position = { x: event.x, y: event.y };
+            });
+
+            magnifyBtn.classList.add("esri-icon-zoom-out-magnifying-glass");
+            magnifyBtn.classList.add("esri-sketch__button--selected");
+          };
+
+          // Store 'custom' tool
+          // Temporarily replace the 'symbol' to be used by the tool
+          // Activate 'polyline' tool in 'single' operation mode
+          // We'll handle
+          cutButton.onclick = () => {
+            activeCustomOperation = "cut";
+            sketch.creationMode = "single";
+            sketch.viewModel.polylineSymbol = customPolylineSymbol;
+            sketch.create("polyline");
+          };
+
+          const highlights = new Handles();
+          highlightCheckbox.onchange = () => onHighlightCheckboxChange();
+
+          sketch.updateGraphics.on("change", (event) => {
+            const { added, removed } = event;
+
+            removed.forEach((g) => unhighlight(g));
+
+            if (highlightCheckbox.checked) {
+              added.forEach((g) => highlight(g));
+            }
+          });
+
+          function onHighlightCheckboxChange() {
+            disableHighlights();
+
+            if (highlightCheckbox.checked) {
+              enableHighlights();
+            }
+          }
+
+          function enableHighlights() {
+            [...sketch.updateGraphics.items].forEach((graphic) => highlight(graphic));
+          }
+
+          function disableHighlights() {
+            [...sketch.updateGraphics.items].forEach((graphic) => unhighlight(graphic));
+          }
+
+          function highlight(feature) {
+            const match = view.allLayerViews.items.find(({ layer }) => layer === feature.layer);
+            highlights.add(match.highlight(feature), `feature-${feature.uid}`);
+          }
+
+          function unhighlight(feature) {
+            highlights.remove(`feature-${feature.uid}`);
+          }
+
+          //--------------------------------------------------------------------------
+          //
+          //  Create operation tools/workflows
+          //
+          //--------------------------------------------------------------------------
+
+          const drawModeSelect = document.getElementById("drawModeSelect");
+          const creationModeSelect = document.getElementById("creationModeSelect");
+
+          // Modify 'draw mode'
+          // Note: invalid values are ignored for convenience ('default' is used)
+          drawModeSelect.onchange = () => {
+            sketch.viewModel.defaultCreateOptions.mode = drawModeSelect.value;
+            sketch.create(sketch.activeTool);
+          }
+
+          // Modify 'creation mode'
+          creationModeSelect.onchange = () => {
+            sketch.creationMode = creationModeSelect.value;
+          }
+
+          //--------------------------------------------------------------------------
+          //
+          //  Update operation tools/workflows
+          //
+          //--------------------------------------------------------------------------
+
+          const copyButton = document.getElementById("copyBtn");
+          const rotateButton = document.getElementById("rotateBtn");
+          const rotateInput = document.getElementById("rotateInput");
+          const unionButton = document.getElementById("unionBtn");
+
+          // Combine selected graphics
+          unionButton.onclick = () => {
+            unionGraphics([...sketch.updateGraphics.items]);
+          };
+
+          // Duplicate selected graphics
+          copyButton.onclick = () => {
+            const graphics = sketch.updateGraphics.items;
+            const clones = graphics.map((graphic) => graphic.clone());
+
+            layer.addMany(clones);
+            sketch.update(clones, { tool: sketch.activeTool });
+          };
+
+          // Rotate selected graphics by specified degree(s)
+          rotateButton.onclick = () => {
+            const graphics = [...sketch.updateGraphics.items];
+
+            // Loop through current graphics
+            // and update geometries directly
+            graphics.forEach((graphic) => {
+              graphic.geometry = geometryEngine.rotate(graphic.geometry, rotateInput.value);
+            });
+            
+            // Restart the operation with the current tool
+            sketch.update(graphics, { tool: sketch.activeTool });
+          };
+
+          //--------------------------------------------------------------------------
+          //
+          //  UI Updates
+          //
+          //--------------------------------------------------------------------------
+
+          const createButtonContainer = document.getElementById("createButtonContainer");
+          const updateButtonContainer = document.getElementById("updateButtonContainer");
+
+          sketch.watch("activeTool", (newValue) => {
+            if (newValue) {
+              // Updating
+              if (sketch.updateGraphics.length) {
+                createButtonContainer.classList.add("hidden");
+                updateButtonContainer.classList.remove("hidden");
+              }
+              // Creating 
+              else {
+                createButtonContainer.classList.remove("hidden");
+                updateButtonContainer.classList.add("hidden");
+              }
+            } else {
+              createButtonContainer.classList.add("hidden");
+              updateButtonContainer.classList.add("hidden");
+            }
+
+            if (activeCustomOperation === "cut") {
+              cutButton.classList.add("esri-sketch__button--selected");
+            } else {
+              cutButton.classList.remove("esri-sketch__button--selected");
+            }
+          });
+
+          // Used to apply 'cut' operation to relevant geometries
+          sketch.on("create", (event) => {
+            // Check if a custom operation was used 
+            // ... only upon completion of the current operation
+            if (activeCustomOperation === "cut" && event.state === "complete") {
+              onCutOperationComplete(event.graphic);
+
+              // Reset app state
+              sketch.viewModel.polylineSymbol = defaultPolylineSymbol;
+              activeCustomOperation = null;
+            }
+          });
+        });
+
+        //--------------------------------------------------------------------------
+        //
+        //  Operational logic
+        //
+        //--------------------------------------------------------------------------
+
+        function onCutOperationComplete(cutterGraphic) {
+          // Remove the cut graphic from view
+          layer.remove(cutterGraphic);
+
+          // Shallow clone for preserving original geometries
+          // in the following loop.
+          const layerGraphics = layer.graphics.items.slice(0);
+
+          // Loop through all graphics on the GraphicsLayer and
+          // attempt to cut each graphic using the geometry of
+          // the cut graphic.
+          // Only valid cuts are acknowleged
+          layerGraphics.forEach((graphic) => {
+            // Get cut geometries
+            const cutGeometries = geometryEngine.cut(graphic.geometry, cutterGraphic.geometry);
+
+            // Found valid geometries
+            if (cutGeometries.length) {
+              // Create new graphics from the geometries
+              const graphics = cutGeometries.map(
+                (geometry) => new Graphic({ geometry, symbol: graphic.symbol })
+              );
+
+              // Remove the graphic that was cut from the view
+              layer.remove(graphic);
+
+              // Add the newly created graphics to the view
+              layer.addMany(graphics);
+            }
+          });
+        }
+
+        function unionGraphics(graphics) {
+          // Get geometries from the target graphics
+          const geometries = graphics.map((graphic) => graphic.geometry);
+
+          // Combine the geometries
+          const unionedGeometry = geometryEngine.union(geometries);
+
+          // Check validity
+          if (unionedGeometry) {
+            // Create a graphic with the new geometry
+            const unionedGraphic = new Graphic({
+              geometry: unionedGeometry,
+              symbol: graphics[0].symbol
+            });
+
+            // Remove target graphics from the view
+            layer.removeMany(graphics);
+
+            // Add the graphic to the view
+            layer.add(unionedGraphic);
+          }
+        }
+
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv">
+      <div id="draw-container" class="hidden">
+        <div id="sketch"></div>
+        <div class="esri-widget">
+          <div class="button-container">
+            <div class="esri-sketch__section esri-sketch__tool-section">
+              <button
+                class="esri-sketch__button esri-icon-zoom-in-magnifying-glass"
+                id="magnifyBtn"
+                type="button"
+                title="Magnify"
+              ></button>
+            </div>
+            <div class="esri-sketch__section esri-sketch__tool-section">
+              <button
+                class="esri-sketch__button esri-icon-edit"
+                id="cutBtn"
+                type="button"
+                title="Cut geometries"
+              ></button>
+            </div>
+          </div>
+          <div id="createButtonContainer" class="button-container hidden">
+            <div class="esri-sketch__section esri-sketch__tool-section">
+              <div class="esri-sketch__section esri-sketch__tool-section">
+                <label id="drawModeLabel" for="drawModeSelect">Draw Mode:</label>
+                <select id="drawModeSelect">
+                  <option value="hybrid">Hybrid</option>
+                  <option value="freehand">Freehand</option>
+                  <option value="click" selected>Click</option>
+                </select>
+              </div>
+            </div>
+            <div class="esri-sketch__section esri-sketch__tool-section">
+              <label id="creationModeLabel" for="creationModeSelect">Creation Mode:</label>
+              <select id="creationModeSelect">
+                <option value="single">Single</option>
+                <option value="update">Update</option>
+                <option value="continuous" selected>Continuous</option>
+              </select>
+            </div>
+          </div>
+          <div id="updateButtonContainer" class="button-container hidden">
+            <div class="esri-sketch__section esri-sketch__tool-section">
+              <button
+                class="esri-sketch__button esri-icon-duplicate"
+                id="copyBtn"
+                type="button"
+                title="Copy geometries"
+              ></button>
+              <button
+                class="esri-sketch__button esri-icon-link"
+                id="unionBtn"
+                type="button"
+                title="Merge geometries"
+              ></button>
+            </div>
+            <div class="esri-sketch__section esri-sketch__tool-section">
+              <button
+                class="esri-sketch__button esri-icon-rotate"
+                id="rotateBtn"
+                type="button"
+                title="Rotate geometries"
+              ></button>
+              <input type="number" max="360" min="-360" value="45" id="rotateInput" />
+            </div>
+            <div class="esri-sketch__section esri-sketch__tool-section">
+              <label for="highlightCheckbox">Highlight Enabled:</label>
+              <input id="highlightCheckbox" type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

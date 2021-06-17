@@ -190,7 +190,7 @@
 
 ---
 
-### **Arno adds his section specific to 3d stuff**
+### **3d editing workflows content**
 
 ---
 

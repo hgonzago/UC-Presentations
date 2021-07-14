@@ -182,33 +182,334 @@
 
 ---
 
-<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" -->
+<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" data-transition="slide-in fade-out" -->
 
-### 3d Editing Workflows
+### Editing in 3D
 
 #### Arno Fiva
 
 ---
 
-### **3d editing workflows content**
+<!-- .slide: data-transition="fade-in slide-out" -->
+
+### Editing in 3D
+
+- From 2D to 3D
+- 3D feature layer editing applied
+- Beyond feature layers
+
+---
+
+<!-- .slide: data-transition="slide-in fade-out" data-background-transition="none" -->
+
+### From 2D to 3D
+
+Editing works out-of-the-box also for `SceneView`
+
+<img srcset="images/3d/01-from-2d-to-3d-1.png 2x" class="fragment" />
+
+<!--
+Carbon Template
+
+https://carbon.now.sh/?bg=rgba%28171%2C184%2C195%2C0%29&t=vscode&wt=none&l=auto&ds=true&dsyoff=23px&dsblur=28px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%252F%252F%2520const%2520view%2520%253D%2520new%2520MapView%28%257B%250A%252F%252F%2520%2520map%253A%2520new%2520WebMap%28%252F*%2520...%2520*%252F%29%250A%252F%252F%2520%257D%29%253B%250A%250Aconst%2520view%2520%253D%2520new%2520SceneView%28%257B%250A%2520%2520map%253A%2520new%2520WebScene%28%252F*%2520...%2520*%252F%29%250A%257D%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%250Aconst%2520editor%2520%253D%2520new%2520Editor%28%257B%250A%2520%2520view%253A%2520view%250A%257D%29%253B%250Aview.ui.add%28editor%252C%2520%2522top-right%2522%29%253B
+
+-->
+
+---
+
+<!-- .slide: data-transition="none-out" data-background-transition="none" -->
+
+### From 2D to 3D
+
+Editing works out-of-the-box also for `SceneView`
+
+<img srcset="images/3d/01-from-2d-to-3d-2.png 2x" />
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### From 2D to 3D
+
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-editor-basic/ <!-- .element style="font-size: 0.6em;" -->
+
+<a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-editor-basic/" target="_blank">
+<img srcset="images/3d/01-sample.png 4x" />
+</a>
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### From 2D to 3D
+
+Geometries with z-values <!-- .element class="fragment" style="font-size: 0.8em;" -->
+
+<img srcset="images/3d/01-z-values.png 4x" /> <!-- .element class="fragment" -->
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### From 2D to 3D
+
+<div class="fragment" style="font-size: 0.8em;">
+
+`ElevationInfo` for visualizing data in 3D space
+
+</div>
+
+<img srcset="images/3d/01-elevation-info.png 2x" /> <!-- .element class="fragment" style="border: solid 10px white;" -->
+https://developers.arcgis.com/javascript/latest/sample-code/scene-elevationinfo/  <!-- .element style="font-size: 0.5em;" class="fragment" -->
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### From 2D to 3D
+
+<div class="fragment" style="font-size: 0.8em;">
+
+Symbology: `ObjectSymbol3DLayer` for volumetric shapes
+
+</div>
+
+<a class="fragment" href="https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-ObjectSymbol3DLayer.html">
+<img srcset="images/3d/01-symbology.png 1.5x" />
+</a>
+
+https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-ObjectSymbol3DLayer.html <!-- .element style="font-size: 0.5em;" class="fragment" -->
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### From 2D to 3D
+
+* `SceneView`
+* Geometries with z-values
+* `ElevationInfo` for visualizing data in 3D space
+* Volumetric symbology
 
 ---
 
 <!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" -->
 
+<a class="fragment" href="/demos/from-2d-to-3d/" target="_blank">
+<img srcset="images/3d/01-demo.png 6x" />
+</a>
+
+---
+
+<!-- .slide: data-transition="none"  data-background-transition="none" -->
+
+### Editing in 3D
+
+- From 2D to 3D
+- <!-- .element style="opacity: 0.3;" --> 3D feature layer editing applied
+- <!-- .element style="opacity: 0.3;" --> Beyond feature layers
+
+---
+
+<!-- .slide: data-transition="none"  data-background-transition="none" -->
+
+### Editing in 3D
+
+- <!-- .element style="opacity: 0.3;" --> From 2D to 3D
+- 3D feature layer editing applied
+- <!-- .element style="opacity: 0.3;" --> Beyond feature layers
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### 3D feature layer editing applied
+
+<div>
+
+Fire incident plan
+
+<img srcset="images/3d/02-fire-incident.png 3.5x" />
+
+</div>
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### 3D feature layer editing applied
+
+<div>
+
+Zoning plan with plausable buildings
+
+<img srcset="images/3d/02-zoning.png 3.5x" />
+
+</div>
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### 3D feature layer editing applied
+
+<div>
+
+Zoning plan with plausable buildings
+
+<img srcset="images/3d/02-plausable-building.png 3.5x" />
+
+</div>
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### 3D feature layer editing applied
+
+<div>
+
+Building evacuation plan
+
+<img srcset="images/3d/02-evacuation-plan.png 3.5x" />
+
+</div>
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### Editing in 3D
+
+- <!-- .element style="opacity: 0.3;" --> From 2D to 3D
+- <!-- .element style="opacity: 0.3;" --> 3D feature layer editing applied
+- Beyond feature layers
+
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### Integrated mesh modifications
+
+<img srcset="images/3d/03-frankfurt.png 3.5x" />
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### Integrated mesh modifications
+
+<img srcset="images/3d/03-modification-code.png 2x" />
+
+<table style="width: 500px;">
+  <thead style="background-color: #f3f3f3;">
+    </tr>
+      <th style="font-size: 0.6em; color: #4a4a4a; border: 1px solid #cacaca;">Clip</th>
+      <th style="font-size: 0.6em; color: #4a4a4a; border: 1px solid #cacaca;">Mask</th>
+      <th style="font-size: 0.6em; color: #4a4a4a; border: 1px solid #cacaca;">Replace</th>
+    </tr>
+  </thead>
+  <tbody style="background-color: #ffffff;">
+    <tr>
+      <td style="border: 1px solid #cacaca;"><img src="./images/3d/03-modification-clip.png" style="width: 100px;" /></td>
+      <td style="border: 1px solid #cacaca;"><img src="./images/3d/03-modification-mask.png" style="width: 100px;" /></td>
+      <td style="border: 1px solid #cacaca;"><img src="./images/3d/03-modification-replace.png" style="width: 100px;" /></td>
+    </tr>
+    </tr>
+      <td style="font-size: 0.5em; color: #4a4a4a; border: 1px solid #cacaca">Removes selected area</td>
+      <td style="font-size: 0.5em; color: #4a4a4a; border: 1px solid #cacaca">Displays only selected area</td>
+      <td style="font-size: 0.5em; color: #4a4a4a; border: 1px solid #cacaca">Flattens selected area</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### Integrated mesh modifications
+
+<img srcset="images/3d/03-modification-code.png 2x" />
+
+ <ul>
+  <li class="fragment">Applied client-side</li>
+  <li class="fragment">Does not change underlying data (mesh)</li>
+  <li class="fragment">Persist and share with <code>WebScene.save()</code></li>
+</ul>
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### Integrated mesh modifications
+
+<img srcset="images/3d/03-im-modifications.png 1.5x" />
+
+https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer-modification/ <!-- .element style="font-size: 0.5em;" -->
+
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### Scene layer attribute editing
+
+<img srcset="images/3d/04-scene.png 1.5x" class="fragment" />
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### Scene layer attribute editing
+
+<img srcset="images/3d/04-code.png 2x"  />
+
+
+---
+
+<!-- .slide: data-transition="none" data-background-transition="none" -->
+
+### Scene layer attribute editing
+
+<ul>
+  <li class="fragment">Requires associated feature layer
+    <div style="text-align: center;">
+      <img style="width: 301px; height: 105px;" src="./images/3d/04-associated-fl.png">
+    </div>
+  </li>
+  <li class="fragment">Attribute edits applied to feature layer</li>
+  <li class="fragment">Owner updates scene layer cache in <br />ArcGIS Online/Enterprise</li>
+</ul>
+
+---
+
+<!-- .slide: data-transition="none slide-out" data-background-transition="none" -->
+
+### Editing in 3D
+
+<a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-editor-3d/" target="_blank">
+<img srcset="images/3d/05-editing-sample.png 4x" />
+</a>
+
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-editor-3d/ <!-- .element style="font-size: 0.6em;" -->
+
+---
+
+<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" data-transition="slide" data-background-transition="none" -->
 ## Slides and Demos
 
 <a href="https://bit.ly/3itKZGD">https://bit.ly/3itKZGD</a>
 
 ---
 
-<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" -->
+<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" data-transition="slide" data-background-transition="none" -->
 
 ## Questions
 
 ---
 
-<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-4.png" -->
+<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-4.png" data-transition="slide" data-background-transition="none" -->
 
 ### **We want your feedback**
 
@@ -218,4 +519,4 @@ below this video window
 
 ---
 
-<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-6.png" -->
+<!-- .slide: data-background="../reveal.js/img/2021/uc/bg-6.png"  data-background-transition="none" -->

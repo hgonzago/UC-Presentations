@@ -198,7 +198,7 @@
 - 3D feature layer editing applied
 - Beyond feature layers
 
-----
+---
 
 <!-- .slide: data-transition="slide-in fade-out" data-background-transition="none" -->
 
@@ -215,7 +215,7 @@ https://carbon.now.sh/?bg=rgba%28171%2C184%2C195%2C0%29&t=vscode&wt=none&l=auto&
 
 -->
 
-----
+---
 
 <!-- .slide: data-transition="none-out" data-background-transition="none" -->
 
@@ -225,7 +225,7 @@ Editing works out-of-the-box also for `SceneView`
 
 <img srcset="images/3d/01-from-2d-to-3d-2.png 2x" />
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -237,7 +237,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/widgets-editor-basic
 <img srcset="images/3d/01-sample.png 4x" />
 </a>
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -247,7 +247,7 @@ Geometries with z-values <!-- .element class="fragment" style="font-size: 0.8em;
 
 <img srcset="images/3d/01-z-values.png 4x" /> <!-- .element class="fragment" -->
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -262,7 +262,7 @@ Geometries with z-values <!-- .element class="fragment" style="font-size: 0.8em;
 <img srcset="images/3d/01-elevation-info.png 2x" /> <!-- .element class="fragment" style="border: solid 10px white;" -->
 https://developers.arcgis.com/javascript/latest/sample-code/scene-elevationinfo/  <!-- .element style="font-size: 0.5em;" class="fragment" -->
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -280,7 +280,7 @@ Symbology: `ObjectSymbol3DLayer` for volumetric shapes
 
 https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-ObjectSymbol3DLayer.html <!-- .element style="font-size: 0.5em;" class="fragment" -->
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -299,7 +299,7 @@ https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-Objec
 <img srcset="images/3d/01-demo.png 6x" />
 </a>
 
-----
+---
 
 <!-- .slide: data-transition="none"  data-background-transition="none" -->
 
@@ -309,7 +309,7 @@ https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-Objec
 - <!-- .element style="opacity: 0.3;" --> 3D feature layer editing applied
 - <!-- .element style="opacity: 0.3;" --> Beyond feature layers
 
-----
+---
 
 <!-- .slide: data-transition="none"  data-background-transition="none" -->
 
@@ -319,7 +319,7 @@ https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-Objec
 - 3D feature layer editing applied
 - <!-- .element style="opacity: 0.3;" --> Beyond feature layers
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -333,7 +333,7 @@ Fire incident plan
 
 </div>
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -347,7 +347,7 @@ Zoning plan with plausable buildings
 
 </div>
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -361,7 +361,7 @@ Zoning plan with plausable buildings
 
 </div>
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -375,7 +375,7 @@ Building evacuation plan
 
 </div>
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -386,7 +386,7 @@ Building evacuation plan
 - Beyond feature layers
 
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -394,7 +394,7 @@ Building evacuation plan
 
 <img srcset="images/3d/03-frankfurt.png 3.5x" />
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -424,7 +424,7 @@ Building evacuation plan
   </tbody>
 </table>
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -438,7 +438,7 @@ Building evacuation plan
   <li class="fragment">Persist and share with <code>WebScene.save()</code></li>
 </ul>
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -449,7 +449,7 @@ Building evacuation plan
 https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer-modification/ <!-- .element style="font-size: 0.5em;" -->
 
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -457,7 +457,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmes
 
 <img srcset="images/3d/04-scene.png 1.5x" class="fragment" />
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -466,7 +466,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmes
 <img srcset="images/3d/04-code.png 2x"  />
 
 
-----
+---
 
 <!-- .slide: data-transition="none" data-background-transition="none" -->
 
@@ -482,7 +482,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmes
   <li class="fragment">Owner updates scene layer cache in <br />ArcGIS Online/Enterprise</li>
 </ul>
 
-----
+---
 
 <!-- .slide: data-transition="none slide-out" data-background-transition="none" -->
 
@@ -494,7 +494,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmes
 
 https://developers.arcgis.com/javascript/latest/sample-code/widgets-editor-3d/ <!-- .element style="font-size: 0.6em;" -->
 
-----
+---
 
 <!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" data-transition="slide" data-background-transition="none" -->
 ## Slides and Demos
@@ -504,7 +504,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/widgets-editor-3d/ <
 ---
 
 <!-- .slide: data-background="../reveal.js/img/2021/uc/bg-3.png" data-transition="slide" data-background-transition="none" -->
->>>>>>> f2bb28c (Added 3D slides)
+
 ## Questions
 
 ---

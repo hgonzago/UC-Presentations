@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>
+      Edit features with the Editor widget | Sample | ArcGIS API for JavaScript
+      4.24
+    </title>
+    
+    
+	
+    <link rel="stylesheet" href="https://hgonzago.esri.com/arcgis-js-api-4/buildOutput/esri/css/main.css">
+
+  <script src="https://hgonzago.esri.com/arcgis-js-api-4/buildOutput/init.js"></script>
+<!--
+
+
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.24/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.24/"></script>
+-->
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      .esri-editor .esri-item-list__scroller {
+        max-height: 350px;
+      }
+    </style>
+
+    <script>
+      require(["esri/WebMap", "esri/views/MapView", "esri/widgets/Editor"], (
+        WebMap,
+        MapView,
+        Editor
+      ) => {
+
+        // Create a map from the referenced webmap item id
+        const webmap = new WebMap({
+          portalItem: {
+            // 8865c066b268496fa8eb36191642f0c4 sand bags
+            // 53be6a0b63fd490fb3888f16a052eb46 naperville utiolities
+            // basic naperville cc74c82d80b747aa93da8af0e4841ef9 
+            id: "53be6a0b63fd490fb3888f16a052eb46"
+          }
+        });
+
+        const view = new MapView({
+          container: "viewDiv",
+          map: webmap
+        });
+
+        view.when(() => {
+          view.map.loadAll().then(() => {
+            const editor = new Editor({
+              view: view,
+              tooltipOptions: {
+                enabled: true
+              }
+            });
+
+            // Add the widget to the view
+            view.ui.add(editor, "top-right");
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>
